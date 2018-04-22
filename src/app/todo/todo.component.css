@@ -1,0 +1,10 @@
+.todoList{
+    margin: 1rem;
+}
+
+.greenTodo{
+    color: green;
+}
+.redTodo{
+    color: red;
+}

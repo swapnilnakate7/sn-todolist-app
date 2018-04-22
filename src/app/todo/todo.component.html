@@ -1,0 +1,21 @@
+
+<form class="col-md-5"><div class="form-group">
+        <label for="todoInput">Email address</label>
+<input class="form-control" id=todoInput type="text" #itemTitle/>
+</div>
+<button class="btn btn-primary" (click)="onAdd(itemTitle)">Add</button>
+
+
+
+</form>
+
+<div *ngFor="let todo of todoListArray" class="row border todoList">
+
+        <span class="col" [ngClass]="todo.isChecked?'greenTodo':'redTodo'">{{todo.title}}</span>
+        
+        <button *ngIf="!todo.isChecked" class="btn btn-primary col-sm-2"
+         (click)="onTodoCheck(todo.$key,todo.isChecked)">Check</button>
+
+        <button *ngIf="todo.isChecked" class="btn btn-danger col-sm-2"
+         (click)="onTodoCheck(todo.$key,todo.isChecked)">UnCheck</button>
+        </div>
